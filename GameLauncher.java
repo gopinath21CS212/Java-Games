@@ -1,9 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import TicTacToe.TicTacToe;
-import TicTacToe.ttt;
+import TicTacToeGame.ttt;
+import TicTacToeGame.TicTacToeGame;
 import WhacAMole.App;
 import WhacAMole.WhacAMole;
 
@@ -50,12 +49,7 @@ public class GameLauncher {
             public void actionPerformed(ActionEvent e) {
                 // Launch Tic Tac Toe Game
                 JFrame tictactoeFrame = new JFrame("Tic Tac Toe");
-                TicTacToe ttt = new TicTacToe();
-                tictactoeFrame.add(ttt);
-                tictactoeFrame.setSize(600, 650); // Adjust size if needed
-                tictactoeFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                tictactoeFrame.setLocationRelativeTo(null);
-                tictactoeFrame.setVisible(true);
+                TicTacToeGame tttGame = new TicTacToeGame(); // Instantiate the TicTacToe class
             }
         });
 
@@ -64,11 +58,6 @@ public class GameLauncher {
                 // Launch Whac-A-Mole Game
                 JFrame whacamoleFrame = new JFrame("Whac A Mole");
                 WhacAMole wamPanel = new WhacAMole(); // Directly use the constructor
-                whacamoleFrame.add(wamPanel);
-                whacamoleFrame.setSize(600, 650); // Set the size according to your game dimensions
-                whacamoleFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                whacamoleFrame.setLocationRelativeTo(null);
-                whacamoleFrame.setVisible(true);
             }
         });
 

@@ -1,10 +1,10 @@
-package TicTacToe;
+package TicTacToeGame;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class TicTacToe extends JPanel {
+public class TicTacToeGame extends JPanel {
     int boardWidth = 600;
     int boardHeight = 650;
     JLabel textLabel = new JLabel();
@@ -18,7 +18,12 @@ public class TicTacToe extends JPanel {
 
     Boolean GameOver = false;
 
-    public TicTacToe() {
+    public TicTacToeGame() {
+        JFrame frame = new JFrame("Tic Tac Toe");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(boardWidth, boardHeight);
+        frame.setLocationRelativeTo(null);
+
         setLayout(new BorderLayout());
 
         textLabel.setBackground(Color.darkGray);
@@ -65,6 +70,9 @@ public class TicTacToe extends JPanel {
                 });
             }
         }
+
+        frame.add(this);
+        frame.setVisible(true);
     }
 
     private void checkWinner() {
@@ -126,3 +134,5 @@ public class TicTacToe extends JPanel {
         textLabel.setText(CurrentPlayer + " is the Winner!");
     }
 }
+
+
